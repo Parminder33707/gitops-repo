@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: student-demo
+  template:
+    metadata:
+      labels:
+        app: student-demo
+    spec:
+      containers:
+      - name: student-demo
+        image: YOUR_DOCKERHUB_USERNAME/student-demo:latest
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: student-demo
+spec:
+  selector:
+    app: student-demo
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: ClusterIP
