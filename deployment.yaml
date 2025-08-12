@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: student-demo
-        image: YOUR_DOCKERHUB_USERNAME/student-demo:latest
+        image: parminderhe33707/student-demo:latest
         ports:
         - containerPort: 8080
 ---
