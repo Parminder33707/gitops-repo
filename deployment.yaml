@@ -1,32 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: student-demo
+  name: flask-demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: student-demo
+      app: flask-demo
   template:
     metadata:
       labels:
-        app: student-demo
+        app: flask-demo
     spec:
       containers:
-      - name: student-demo
-        image: parminderhe33707/student-demo:latest
+      - name: flask-demo
+        image: your-dockerhub-username/student-flask-demo:latest
         ports:
-        - containerPort: 8080
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: student-demo
-spec:
-  selector:
-    app: student-demo
-  ports:
-  - protocol: TCP
-    port: 8080
-    targetPort: 8080
-  type: ClusterIP
+        - containerPort: 5000
