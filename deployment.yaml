@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flask-demo
+  labels:
+    app: flask-demo
 spec:
   replicas: 1
   selector:
@@ -14,6 +16,6 @@ spec:
     spec:
       containers:
       - name: flask-demo
-        image: your-dockerhub-username/student-flask-demo:latest
+        image: parminderhe33707/fitness-app:latest   # 👈 replace with your Docker Hub repo
         ports:
         - containerPort: 5000
