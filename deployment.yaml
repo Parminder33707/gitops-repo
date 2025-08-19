@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: flask-demo
-        image: parminderhe33707/fitness-app:latest   # 👈 replace with your Docker Hub repo
+        image: parminderhe33707/fitness-app:latest 
         ports:
         - containerPort: 5000
