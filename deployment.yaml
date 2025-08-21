@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: fitness-app
-          image: DOCKER_USERNAME/fitness-app:latest  # <-- replace DOCKER_USERNAME
+          image: parminderhe33707/fitness-app:latest  
           ports:
             - containerPort: 5000
           readinessProbe:
